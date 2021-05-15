@@ -17,11 +17,11 @@ app = Flask(__name__)
 
 def predict():
     with popup("Plant Pathalogy Prediction"):
-        put_text("Good to see you again")
+        put_text("Good to see you again, the prediction may take upto 7 sec depending on image resulation. Have patience.")
 
     img = file_upload("Select a image:", accept="images/*")
 
-    model = helper.load_model()
+   
 
     put_processbar('bar')
     for i in range(1, 11):
@@ -49,6 +49,8 @@ app.add_url_rule('/tool', 'webio_view', webio_view(predict),
 
 
 if __name__ == '__main__':
+    global model 
+    model = helper.load_model()
     parser = argparse.ArgumentParser()
     parser.add_argument("-p","--port",type=int,default=8080)
     args = parser.parse_args()
