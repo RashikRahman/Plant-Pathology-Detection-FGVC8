@@ -27,5 +27,7 @@ python app.py
 ### Web end interface 
 
 ![](./snippets/1.PNG)
+
 ![](./snippets/2.PNG)
+
 ![](./snippets/3.PNG)
